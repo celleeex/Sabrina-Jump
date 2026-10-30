@@ -1,0 +1,99 @@
+   * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+   }
+   body {
+    background-color: #ffe0ec;
+   }
+   .game-board {
+    width: 100%;
+    height: 500px;
+    border: 15px solid #ffc5db; 
+    background: #211a2d url("../imagens/background.jpg") center center / cover no-repeat;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+   }
+   .game-board.game-over::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+   }
+   .restart-button {
+    font-family: "Lucida Console", "Courier New", monospace;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 24px;
+    border: 0;
+    border-radius: 8px;
+    background-color: #ffc5db;
+    color: #211a2d;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+   }
+   .restart-button:hover {
+    background-color: #ffafd0;
+   }
+   .clouds {
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s linear infinite;
+    margin-top: 20px;
+   }
+   .pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 2.5s linear infinite;
+   }
+   @keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+    to {
+        right: 100%;
+    }
+   }
+   @keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+    to {
+        right: 100%;
+    }
+   }
+   .mario {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    width: 90px;
+   }
+   .jump {
+    animation: jump 500ms ease-out;
+   }
+   
+   @keyframes jump {
+    0% {
+        bottom: 0;
+    }
+    40% {
+        bottom: 180px;
+    }
+    50% {
+        bottom: 180px;
+    }
+    60% {
+        bottom: 180px;
+    }
+    100% {
+        bottom: 0;
+    }
+   }
